@@ -40,8 +40,9 @@ function newasipi_setup() {
 	add_theme_support( 'editor-styles' );
 	add_editor_style( 'build/index.css' );
 	
+	add_theme_support('widgets');
 
-	add_theme_support( 'block-template-parts' );
+	//add_theme_support( 'block-template-parts' );
 
 	// Gutenberg responsive embed support.
 	add_theme_support( 'responsive-embeds' );
