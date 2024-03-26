@@ -4,42 +4,42 @@
 
 ### 1. Estructura:
 
-├── assets (dir)/
-│ ├── css (dir)
-│ ├── images (dir)
-│ └── js (dir)
-├── inc (dir)
-│ ├── ctp (dir)
-│ ├── customizer (dir)
-│ ├── filters (dir)
-│ ├── functions (dir)
-│ ├── hooks (dir)
-│ ├── metabox (dir)
-│ ├── setup (dir)
-│ ├── shortcodes (dir)
-│ ├── taxonomies (dir)
-├── template-parts (dir)/
-│ ├── footer (dir)
-│ ├── header (dir)
-│ ├── navigation (dir)
-│ ├── page (dir)
-│ └── post (dir)
-├── 404.php
-├── archive.php
-├── comments.php
-├── footer.php
-├── front-page.php
-├── functions.php
-├── header.php
-├── index.php
-├── page.php
-├── README.MD
-├── screenshot.png
-├── search.php
-├── searchform.php
-├── sidebar.php
-├── single.php
-└── style.css
+├── assets (dir)/<br>
+│ ├── css (dir)<br>
+│ ├── images (dir)<br>
+│ └── js (dir)<br>
+├── inc (dir)<br>
+│ ├── ctp (dir)<br>
+│ ├── customizer (dir)<br>
+│ ├── filters (dir)<br>
+│ ├── functions (dir)<br>
+│ ├── hooks (dir)<br>
+│ ├── metabox (dir)<br>
+│ ├── setup (dir)<br>
+│ ├── shortcodes (dir)<br>
+│ ├── taxonomies (dir)<br>
+├── template-parts (dir)/<br>
+│ ├── footer (dir)<br>
+│ ├── header (dir)<br>
+│ ├── navigation (dir)<br>
+│ ├── page (dir)<br>
+│ └── post (dir)<br>
+├── 404.php<br>
+├── archive.php<br>
+├── comments.php<br>
+├── footer.php<br>
+├── front-page.php<br>
+├── functions.php<br>
+├── header.php<br>
+├── index.php<br>
+├── page.php<br>
+├── README.MD<br>
+├── screenshot.png<br>
+├── search.php<br>
+├── searchform.php<br>
+├── sidebar.php<br>
+├── single.php<br>
+└── style.css<br>
 
 ### 2. Explicación:
 
