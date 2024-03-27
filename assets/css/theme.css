@@ -14301,3 +14301,8 @@ html.gap-outside .pin-wrapper .sticky-wrapper.sticky-effect-active .sticky-body 
 	padding-left: 25px;
 	padding-right: 25px;
 }
+
+/*****nuevo****/
+.header-nav-main nav > ul > li.dropdown-submenu >  a.dropdown-item .fa-chevron-down {
+    display: none;
+}
