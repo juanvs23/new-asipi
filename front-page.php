@@ -15,6 +15,7 @@
 get_header(); ?>
 
     <div role="main" class="main">
+        <?php add_revslider('carousel-home-espanol');  ?>
 			<?php
 			while ( have_posts() ) :
 				the_post();

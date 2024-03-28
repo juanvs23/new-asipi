@@ -53,7 +53,6 @@ function newasipi_scripts() {
 
 
 
-    
     wp_enqueue_script('plugins',NEWASIPI_URL.'/assets/libs/plugins/js/plugins.min.js',array('jquery'),NEWASIPI_VERSION,true);
 
     wp_enqueue_script('theme-js',NEWASIPI_URL.'/assets/js/theme.js',array('jquery','plugins'),NEWASIPI_VERSION,true);
