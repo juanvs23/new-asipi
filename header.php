@@ -158,7 +158,7 @@ $add_classes = get_query_var( 'classes');
     		color: var(--primary-inverse);
 		}
 		.btn-gradient-verde:not(.btn-outline):hover, .btn-gradient-verde:not(.btn-outline).hover {
-   			background: linear-gradient(135deg,  <?php echo get_theme_mod( 'first_degrade_color__hover_setting','#008036'); ?>  0%, <?php echo get_theme_mod( 'second_degrade_color_setting_hover','#00953A'); ?>  80%) !important;
+   			background: linear-gradient(135deg,  <?php echo get_theme_mod( 'first_degrade_color_hover_setting','#008036'); ?>  0%, <?php echo get_theme_mod( 'second_degrade_color_hover_setting','#00953A'); ?>  80%) !important;
     		color: var(--primary-inverse);
 		}
 .btn-gradient-azul:not(.btn-outline) {
