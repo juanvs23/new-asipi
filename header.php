@@ -162,11 +162,11 @@ $add_classes = get_query_var( 'classes');
     		color: var(--primary-inverse);
 		}
 .btn-gradient-azul:not(.btn-outline) {
-    background: linear-gradient(135deg, #002B80 0%, #4458A3 80%) !important;
+    background: linear-gradient(135deg, <?php echo get_theme_mod( 'first_blue_degrade_color_setting','#002B80'); ?> 0%, <?php echo get_theme_mod( 'second_blue_degrade_color_setting','#4458A3'); ?> 80%) !important;
     color: var(--primary-inverse);
 }
 .btn-gradient-azul:not(.btn-outline):hover, .btn-gradient-azul:not(.btn-outline).hover {
-    background: linear-gradient(135deg, #4458A3 0%, #002B80 80%) !important;
+    background: linear-gradient(135deg, <?php echo get_theme_mod( 'first_blue_degrade_color_hover_setting','#4458A3'); ?> 0%, <?php echo get_theme_mod( 'second_blue_degrade_color_hover_setting','#002B80'); ?>  80%) !important;
     color: var(--primary-inverse);
 }
 
