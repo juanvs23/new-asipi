@@ -114,7 +114,10 @@ class WP_Custom_Nav_Walker extends Walker_Nav_Menu {
 
 		$args = (object)$args;
 		$item_output  = $args->before;
-		$item_output .= '<a class="dropdown-item" '. $attributes .'>';
+		$anchor_class='';
+		if(isset($args->walker->has_children) && $args->walker->has_children)
+		$anchor_class = ' dropdown-toggle nav_link';
+		$item_output .= '<a class="dropdown-item '.$anchor_class.'" '. $attributes .'>';
 		/** This filter is documented in wp-includes/post-template.php */
 		$item_output .= $args->link_before . apply_filters( 'the_title', $item->title, $item->ID ) . $args->link_after;
 		$item_output .= '</a>';
