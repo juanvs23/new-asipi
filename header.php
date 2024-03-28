@@ -32,7 +32,7 @@ $add_classes = get_query_var( 'classes');
 
 			<?php
 			$primary_degrade = get_theme_mod( 'primary_color_degradate_setting', '#099fdc' );
-			echo degradate_color($primary_degrade);
+			echo degradate_color($primary_degrade,'--primary-');
 			?>
 			--secondary:  <?php echo get_theme_mod( 'secondary_setting','#068439'); ?>;
 			--secondary-100: <?php echo get_theme_mod( 'secondary_100_setting','#045ee9'); ?>;
@@ -43,8 +43,21 @@ $add_classes = get_query_var( 'classes');
 			--secondary--300: <?php echo get_theme_mod( 'secondary__300_setting','#3d89fc'); ?>;
 			<?php
 			$secondary_degrade = get_theme_mod( 'secondary_color_degradate_setting', '#0b6afb' );
-			echo degradate_color($secondary_degrade);
+			echo degradate_color($secondary_degrade,'--secondary-');
 			?>
+			--tertiary:  <?php echo get_theme_mod( 'tertiary_setting','#262c36'); ?>;
+			--tertiary-100: <?php echo get_theme_mod( 'tertiary_100_setting','#1b2027'); ?>;
+			--tertiary-200: <?php echo get_theme_mod( 'tertiary_200_setting','#161a20'); ?>;
+			--tertiary-300: <?php echo get_theme_mod( 'tertiary_300_setting','#111418'); ?>;
+			--tertiary--100: <?php echo get_theme_mod( 'tertiary__100_setting','#313845'); ?>;
+			--tertiary--200: <?php echo get_theme_mod( 'tertiary__200_setting','#363e4c'); ?>;
+			--tertiary--300: <?php echo get_theme_mod( 'tertiary__300_setting','#3b445'); ?>;
+			<?php
+			$tertiary_degrade = get_theme_mod( 'tertiary_color_degradate_setting', '#262c36' );
+			echo degradate_color($tertiary_degrade,'--tertiary-');
+			?>
+
+			/*
 			--tertiary: #262c36;
 			--tertiary-100: #1b2027;
 			--tertiary-200: #161a20;
@@ -113,6 +126,8 @@ $add_classes = get_query_var( 'classes');
 			--light-rgba-70: rgba(255, 255, 255, 0.7);
 			--light-rgba-80: rgba(255, 255, 255, 0.8);
 			--light-rgba-90: rgba(255, 255, 255, 0.9);
+			*/
+			
 		}
 		/* Skin Colors - Inverse */
 		:root {
