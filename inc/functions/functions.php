@@ -8,4 +8,3 @@ require __DIR__ . '/security.php';
 require __DIR__ . '/html-classes.php';
 require __DIR__ . '/create-customizer-panel.php';
 require __DIR__. '/nav-menu-template.php';
-require __DIR__. '/metabox-slider.php';
