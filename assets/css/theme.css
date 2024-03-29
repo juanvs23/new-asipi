@@ -1564,6 +1564,7 @@ html.sticky-header-enabled.sticky-header-active #header .header-logo-sticky-chan
 		right: 20px;
 		transform: translateY(-50%);
 		transition: all .2s ease-out;
+		border-top: 0px;
 	}
 
 	#header .header-nav-main nav > ul > li.dropdown .dropdown-menu li.dropdown-submenu > .dropdown-menu {

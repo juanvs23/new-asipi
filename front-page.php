@@ -15,7 +15,15 @@
 get_header(); ?>
 
     <div role="main" class="main">
-        <?php // add_revslider('carousel-home-espanol');  ?>
+        <?php 	
+
+		$campo_slider_home=get_post_meta($post->ID,'_campo_slider_home', true);
+		if ($campo_slider_home){
+			echo do_shortcode($campo_slider_home);
+		}	 
+		?>
+
+		
 			<?php
 			while ( have_posts() ) :
 				the_post();
@@ -26,7 +34,7 @@ get_header(); ?>
 					</div><!-- .entry-page-image -->
 				<?php endif; ?>
 
-				<?php get_template_part( 'content', 'page' ); ?>
+				<?php echo get_template_part('template-parts/page/page-content'); ?>
 
 			<?php endwhile; // End of the loop. ?>
 
