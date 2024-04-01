@@ -1,6 +1,6 @@
 </div>
 <!-- Footer -->
-<footer id="footer" class="mt-0 position-relative bg-primary border-top-0">
+<footer id="footer" class="position-relative bg-primary border-top-0">
     <div class="container">
         <div class="pt-5 row align-items-end">
             <div class="order-2 mt-5 text-center col-lg-4 order-md-1">

@@ -15,15 +15,31 @@
 get_header(); ?>
 
     <div role="main" class="main">
-        <?php 	
+			<?php 	
+			$campo_slider_home=get_post_meta($post->ID,'_campo_slider_home', true);
+			$title_institucional=get_post_meta($post->ID,'_title_institucional', true);
+			$shortcode_institucional=get_post_meta($post->ID,'_shortcode_institucional', true);
+			$title_media=get_post_meta($post->ID,'_title_media', true);
+			$shortcode_media=get_post_meta($post->ID,'_shortcode_media', true);
+			$title_academico=get_post_meta($post->ID,'_title_academico', true);
+			$image_academico=get_post_meta($post->ID,'_image_academico', true);
+			
+			//Home Slider
+			if ($campo_slider_home){
+				echo do_shortcode($campo_slider_home);
+			}	
 
-		$campo_slider_home=get_post_meta($post->ID,'_campo_slider_home', true);
-		if ($campo_slider_home){
-			echo do_shortcode($campo_slider_home);
-		}	 
-		?>
-
-		
+			//Patrocinadores Institucionales
+			if ($title_institucional && $shortcode_institucional){  
+				echo get_template_part('template-parts/front-page/patrocinadores-institucionales-content');
+			}  
+			?>
+			<?php 
+			//Socio Académico - Media
+			if ($title_media && $shortcode_media && $title_academico && $image_academico){ 
+				echo get_template_part('template-parts/front-page/patrocinadores-media-content');
+			}  
+			?>
 			<?php
 			while ( have_posts() ) :
 				the_post();

@@ -18,9 +18,12 @@ function mostrar_contenido_metabox_slider_home($post) {
     $valor_guardado = get_post_meta($post->ID, '_campo_slider_home', true);
     
     // Mostrar un campo de entrada
-    echo '<label for="campo_slider_home">Shortcode Slider Home:</label>';
-    echo '<input type="text" id="campo_slider_home" name="campo_slider_home" size="120" value="' . esc_attr($valor_guardado) . '">';
-
+    echo '<table>';
+    echo '<tr>';
+    echo '<td style="padding:10px;"><label for="campo_slider_home">Shortcode Slider Home:</label></td>';
+    echo '<td style="padding:10px;"><input type="text" id="campo_slider_home" name="campo_slider_home" size="120" value="' . esc_attr($valor_guardado) . '"></td>';
+    echo '</tr>';
+    echo '</table>';
 
 }
 
