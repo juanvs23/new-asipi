@@ -29,6 +29,7 @@ get_header(); ?>
 				echo do_shortcode($campo_slider_home);
 			}	
 
+
 			//Patrocinadores Institucionales
 			if ($title_institucional && $shortcode_institucional){  
 				echo get_template_part('template-parts/front-page/patrocinadores-institucionales-content');
