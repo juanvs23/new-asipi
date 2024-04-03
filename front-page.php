@@ -28,8 +28,8 @@ get_header(); ?>
 			if ($campo_slider_home){
 				echo do_shortcode($campo_slider_home);
 			}	
-
-
+			// Eventos
+			echo get_template_part( 'template-parts/page/front-page/events');
 			//Patrocinadores Institucionales
 			if ($title_institucional && $shortcode_institucional){  
 				echo get_template_part('template-parts/front-page/patrocinadores-institucionales-content');
@@ -41,19 +41,7 @@ get_header(); ?>
 				echo get_template_part('template-parts/front-page/patrocinadores-media-content');
 			}  
 			?>
-			<?php
-			while ( have_posts() ) :
-				the_post();
-				?>
-				<?php if ( has_post_thumbnail() ) : ?>
-					<div class="entry-page-image">
-						<?php the_post_thumbnail(); ?>
-					</div><!-- .entry-page-image -->
-				<?php endif; ?>
-
-				<?php echo get_template_part('template-parts/page/page-content'); ?>
-
-			<?php endwhile; // End of the loop. ?>
+			
 
 		
 	</div><!-- #primary -->

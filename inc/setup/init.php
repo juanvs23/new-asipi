@@ -78,6 +78,8 @@ function newasipi_setup() {
 		array(
 			
 			'primary' => __( 'Primary Menu', 'newasipi' ),
+			'language' => __( 'Language Menu', 'newasipi' ),
+
 		)
 	);
 }
