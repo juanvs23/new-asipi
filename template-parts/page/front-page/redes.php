@@ -1,4 +1,4 @@
-<section class="section section-height-5 section-with-shape-divider border-0 lazyload my-0" data-bg-src="">
+<section class="section section-height-5 section-with-shape-divider border-0 lazyload my-0" data-bg-src="" style="border: solid red;">
     <div class="shape-divider shape-divider-reverse-x" style="height: 102px;">
     <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 1920 102" preserveAspectRatio="xMinYMin">
     <path fill="#008036" d="M1895,78c-56.71-6.03-113.75-12.1-167-17c-75.42-6.94-133.81-10.66-171-13c-62.1-3.91-108.85-5.97-155-8
@@ -18,70 +18,75 @@
                 <h2 class="text-color-primary font-weight-bold mb-2 appear-animation animated fadeInUpShorter appear-animation-visible" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="200" style="animation-delay: 200ms;">Newsletter</h2>
                 </div>
                 <div class="col-md-4 justify-content-lg-end" style="display: flex;">
-                    <a href="#" class="btn btn-outline btn-rounded btn-primary font-weight-bold text-2 btn-sm appear-animation mb-3" data-appear-animation="fadeInLeftShorter" data-appear-animation-delay="800">Ver todos</a>
+                    <a href="<?php echo home_url();?>/category/asipi-news/" class="btn btn-outline btn-rounded btn-primary font-weight-bold text-2 btn-sm appear-animation mb-3" data-appear-animation="fadeInLeftShorter" data-appear-animation-delay="800"><?php echo"[:es]Ver todos[:en]See all[:pb]See all[:]";?></a>
                 </div>
             </div>
 
 
             <div class="evento card bg-color-light p-5">
-            <div class="row align-items-center">
-                <div class="col">
-                <p class="text-color-primary font-weight-bold text-4 mt-3">Abril 2024</p>
-                <img src="img/newsletter-thumb.jpg" class="img-fluid mb-4" align>
-                </div>
-                <div class="col">
-                <p class="text-color-primary font-weight-bold text-4 mt-3">Abril 2024</p>
-                <img src="img/newsletter-thumb.jpg" class="img-fluid mb-4" align>
-                </div>
-                <div class="col">
-                <p class="text-color-primary font-weight-bold text-4 mt-3">Abril 2024</p>
-                <img src="img/newsletter-thumb.jpg" class="img-fluid mb-4" align>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-12">
-                <h4 class="font-weight-bold text-primary text-center">Suscríbete a nuestro Newsletter</h4>
-                    <form id="newsletterForm" class="form-style-3 w-100" action="php/newsletter-subscribe.php" method="POST">
-                    <div class="d-flex">
-                        <input class="form-control custom-form-control-newsletter-field box-shadow-none" placeholder="Tu correo electrónico" name="newsletterEmail" id="newsletterEmail" type="text" />
-                        <button class="btn btn-gradient custom-form-control-newsletter-btn btn-px-3 btn-py-2 font-weight-bold" type="submit">
-                        ENVIAR
-                        </button>
+                <div class="row align-items-center">
+                <?php
+                $args = array(
+                    'category_name' => 'asipi-news',
+                    'posts_per_page' => 3,
+                );
+                
+                // Instantiate new query instance.
+                $mquery = new WP_Query( $args );
+                if ( $mquery->have_posts() ) {
+                    while ( $mquery->have_posts() ) {
+                        $mquery->the_post();
+
+                        $title = get_the_title();
+                        $feature_image = wp_get_attachment_image_src( get_post_thumbnail_id(get_the_ID()), 'full' )[0];
+                ?>
+                    <div class="col">
+                        <p class="text-color-primary font-weight-bold text-4 mt-3"><?php echo $title; ?></p>
+                        <img src="<?php echo  $feature_image; ?>" class="img-fluid mb-4" align>
                     </div>
-                    </form>
+                <?php
+                    }
+                }
+                wp_reset_postdata();
+                ?>
                 </div>
-                </div>
-            </div>
-            </div>
-
-        <div class="col-md-6">
-
-            <div class="row justify-content-center p-3 align-items-end pb-0">
-                <div class="col-md-8">
-                    <h4 class="text-color-primary font-weight-bold mb-2 appear-animation animated fadeInUpShorter appear-animation-visible" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="200" style="animation-delay: 200ms;">Twitter X</h4>
-                </div>
-                <div class="col-md-4 justify-content-lg-end" style="display: flex;">
-                        <a href="#" class="btn btn-outline btn-rounded btn-primary font-weight-bold text-2 btn-sm appear-animation mb-3" data-appear-animation="fadeInLeftShorter" data-appear-animation-delay="800">Seguir</a>
+                <div class="row">
+                    <div class="col-md-12">
+                    <h4 class="font-weight-bold text-primary text-center"><?php echo '[:es]Suscríbete a nuestro Newsletter[:en]Subscribe to our Newsletter[:pb]Subscribe to our Newsletter[:]'; ?></h4>
+                        <?php  echo do_shortcode('[mc4wp_form id=145]'); ?>
+                    </div>
+                    </div>
                 </div>
             </div>
 
-            <div class="evento card bg-color-light p-3">
-                <a class="twitter-timeline" data-height="200" href="https://twitter.com/ASIPI_?ref_src=twsrc%5Etfw">Tweets by ASIPI_</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-            </div>
+            <div class="col-md-6">
 
-            <div class="row justify-content-center p-3 align-items-end pb-0 mt-5">
-                <div class="col-md-8">
-                    <h4 class="text-color-primary font-weight-bold mb-2 appear-animation animated fadeInUpShorter appear-animation-visible" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="200" style="animation-delay: 200ms;">LinkedIn</h4>
+                <div class="row justify-content-center p-3 align-items-end pb-0">
+                    <div class="col-md-8">
+                        <h4 class="text-color-primary font-weight-bold mb-2 appear-animation animated fadeInUpShorter appear-animation-visible" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="200" style="animation-delay: 200ms;">Twitter X</h4>
+                    </div>
+                    <div class="col-md-4 justify-content-lg-end" style="display: flex;">
+                            <a href="https://twitter.com/ASIPI_" target="_blank" class="btn btn-outline btn-rounded btn-primary font-weight-bold text-2 btn-sm appear-animation mb-3" data-appear-animation="fadeInLeftShorter" data-appear-animation-delay="800"><?php echo"[:es]Seguir[:en]Follow[:pb]Follow[:]";?></a>
+                    </div>
                 </div>
-                <div class="col-md-4 justify-content-lg-end" style="display: flex;">
-                        <a href="#" class="btn btn-outline btn-rounded btn-primary font-weight-bold text-2 btn-sm appear-animation mb-3" data-appear-animation="fadeInLeftShorter" data-appear-animation-delay="800">Seguir</a>
-                </div>
-            </div>
 
-            <div class="evento card bg-color-light p-3">
-                <a class="twitter-timeline" data-height="200" href="https://twitter.com/ASIPI_?ref_src=twsrc%5Etfw">Tweets by ASIPI_</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+                <div class="evento card bg-color-light p-3">
+                    <a class="twitter-timeline" data-height="200" href="https://twitter.com/ASIPI_?ref_src=twsrc%5Etfw">Tweets by ASIPI_</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+                </div>
+
+                <div class="row justify-content-center p-3 align-items-end pb-0 mt-5">
+                    <div class="col-md-8">
+                        <h4 class="text-color-primary font-weight-bold mb-2 appear-animation animated fadeInUpShorter appear-animation-visible" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="200" style="animation-delay: 200ms;">LinkedIn</h4>
+                    </div>
+                    <div class="col-md-4 justify-content-lg-end" style="display: flex;">
+                            <a href="https://www.linkedin.com/company/asociaci-n-interamericana-de-la-propiedad-intelectual-asipi-/" target="_blank" class="btn btn-outline btn-rounded btn-primary font-weight-bold text-2 btn-sm appear-animation mb-3" data-appear-animation="fadeInLeftShorter" data-appear-animation-delay="800"><?php echo"[:es]Seguir[:en]Follow[:pb]Follow[:]";?></a>
+                    </div>
+                </div>
+
+                <div class="evento card bg-color-light p-3">
+                    <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:7180667247776964608" height="190" width="504" frameborder="0" allowfullscreen="" title="Publicación integrada"></iframe>
+                </div>
             </div>
-        </div>
 
         </div>
     </div>

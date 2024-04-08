@@ -33,6 +33,12 @@ get_header(); ?>
 			echo get_template_part( 'template-parts/page/front-page/events');
 			
 
+			// Unete
+			echo get_template_part( 'template-parts/page/front-page/unete');
+
+
+
+
 			// Redes y News
 			echo get_template_part( 'template-parts/page/front-page/redes');
 			
@@ -42,11 +48,14 @@ get_header(); ?>
 				echo get_template_part('template-parts/page/front-page/patrocinadores-institucionales');
 			}  
 			?>
+
+			
 			<?php 
 			//Socio Académico - Media
 			if ($title_media && $shortcode_media && $title_academico && $image_academico){ 
 				echo get_template_part('template-parts/page/front-page/patrocinadores-media');
 			}  
+
 			?>
 			
 
