@@ -23,6 +23,9 @@ get_header(); ?>
 			$shortcode_media=get_post_meta($post->ID,'_shortcode_media', true);
 			$title_academico=get_post_meta($post->ID,'_title_academico', true);
 			$image_academico=get_post_meta($post->ID,'_image_academico', true);
+			$title_unete = get_post_meta($post->ID, '_title_unete', true);
+			$texto_unete = get_post_meta($post->ID, '_texto_unete', true);
+			$image_unete1 = get_post_meta($post->ID, '_image_unete1', true);
 			
 			//Home Slider
 			if ($campo_slider_home){
@@ -34,9 +37,9 @@ get_header(); ?>
 			
 
 			// Unete
-			echo get_template_part( 'template-parts/page/front-page/unete');
-
-
+			if ($title_unete && $texto_unete){  
+				echo get_template_part( 'template-parts/page/front-page/unete');
+			}
 
 
 			// Redes y News
@@ -47,10 +50,7 @@ get_header(); ?>
 			if ($title_institucional && $shortcode_institucional){  
 				echo get_template_part('template-parts/page/front-page/patrocinadores-institucionales');
 			}  
-			?>
-
-			
-			<?php 
+	 
 			//Socio Académico - Media
 			if ($title_media && $shortcode_media && $title_academico && $image_academico){ 
 				echo get_template_part('template-parts/page/front-page/patrocinadores-media');

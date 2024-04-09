@@ -11,7 +11,7 @@ $add_classes = get_query_var( 'classes');
 	<meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
 	<link rel="profile" href="http://gmpg.org/xfn/11">
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
-	<script src="http://asipi.local/wp-includes/js/jquery/jquery.min.js?ver=3.7.1" crossorigin="anonymous"></script>
+	<script src=<?php NEWASIPI_PATH ?>'/wp-includes/js/jquery/jquery.min.js?ver=3.7.1' crossorigin="anonymous"></script>
 	<?php wp_head(); ?>
 	<style>
 		/* General */

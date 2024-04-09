@@ -1,3 +1,15 @@
+<?php 
+$title_unete = get_post_meta($post->ID, '_title_unete', true);
+$texto_unete = get_post_meta($post->ID, '_texto_unete', true);
+$image_unete1 = get_post_meta($post->ID, '_image_unete1', true);
+$image_unete2 = get_post_meta($post->ID, '_image_unete2', true);
+$image_unete3 = get_post_meta($post->ID, '_image_unete3', true);
+$image_unete4 = get_post_meta($post->ID, '_image_unete4', true);
+$image_unete5 = get_post_meta($post->ID, '_image_unete5', true);
+$titulo_boton_unete = get_post_meta($post->ID, '_titulo_boton_unete', true);
+$link_boton_unete = get_post_meta($post->ID, '_link_boton_unete', true);
+?>
+
 <section class="section bg-gradient-azul section-height-3 section-with-shape-divider border-0 lazyload mt-5 mb-0" data-bg-src="img/parallax/parallax-2.jpg">
     <div class="shape-divider shape-divider-reverse-x" style="height: 102px;">
         <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 1920 102" preserveAspectRatio="xMinYMin">
@@ -13,34 +25,44 @@
             <div class="row justify-content-center pb-2 mb-3">
             <div class="col-md-9 col-lg-12 text-center">
                 <h1 class="text-color-light font-weight-bold line-height-6 mb-3 appear-animation animated fadeInUpShorter appear-animation-visible" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="200" style="animation-delay: 200ms;">
-                Únete a ASIPI</h2>
+                <?php echo esc_attr($title_unete); ?></h2>
                 <p class="text-color-light lead appear-animation animated appear-animation-visible mb-5" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="300">
-                    Y sé parte del equipo de profesionales más destacados de la propiedad intelectual.
+                <?php echo esc_attr($texto_unete); ?>
                 </p>
                 <div class="row my-5">
+                <?php if ($image_unete1){  ?>
                     <div class="col-md" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="200" style="animation-delay: 200ms;">
-                        <img src="img/unete-iconos/icono1.png" class="img-fluid mb-4" align>
+                        <img src="<?php echo esc_attr($image_unete1); ?>" class="img-fluid mb-4" align>
                         <p class="text-color-light font-weight-bold text-4 mt-3">Integra los Comités de Trabajo, Comisiones y Programas</p>
                     </div>
+                <?php }?>
+                <?php if ($image_unete2){  ?>
                     <div class="col-md" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="300" style="animation-delay: 200ms;">
-                        <img src="img/unete-iconos/icono2.png" class="img-fluid mb-4" align>
+                        <img src="<?php echo esc_attr($image_unete2); ?>" class="img-fluid mb-4" align>
                         <p class="text-color-light font-weight-bold text-4 mt-3">Extiende tu red de contactos a nivel internacional</p>
                     </div>
+                <?php }?>
+                <?php if ($image_unete3){  ?>
                     <div class="col-md" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="400" style="animation-delay: 200ms;">
-                        <img src="img/unete-iconos/icono3.png" class="img-fluid mb-4" align>
+                        <img src="<?php echo esc_attr($image_unete3); ?>" class="img-fluid mb-4" align>
                         <p class="text-color-light font-weight-bold text-4 mt-3">Mantente actualizado con nuestras publicaciones, webinars, podcasts</p>
                     </div>
+                <?php }?>
+                <?php if ($image_unete4){  ?>
                     <div class="col-md" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="500" style="animation-delay: 200ms;">
-                        <img src="img/unete-iconos/icono4.png" class="img-fluid mb-4" align>
+                        <img src="<?php echo esc_attr($image_unete4); ?>" class="img-fluid mb-4" align>
                         <p class="text-color-light font-weight-bold text-4 mt-3">Obtén una tarifa especial en eventos y cursos</p>
                     </div>
+                <?php }?>
+                <?php if ($image_unete5){  ?>
                     <div class="col-md" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="600" style="animation-delay: 200ms;">
-                        <img src="img/unete-iconos/icono5.png" class="img-fluid mb-4" align>
+                        <img src="<?php echo esc_attr($image_unete5); ?>" class="img-fluid mb-4" align>
                         <p class="text-color-light font-weight-bold text-4 mt-3">Accede a descuentos en el programa de patrocinios</p>
                     </div>
+                <?php }?>
                 </div>
-                <a href="#" class="btn btn-rounded btn-gradient-verde text-color-light custom-btn-effect-1 custom-border-radius-1 d-inline-flex align-items-center font-weight-semibold text-3-5 btn-px-5 btn-py-3 btn-my-3 appear-animation" data-hash data-hash-offset="0" data-hash-offset-lg="32" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="300" data-appear-animation-duration="1.7s">
-                    Más información
+                <a href="<?php echo esc_attr($link_boton_unete); ?>" class="btn btn-rounded btn-gradient-verde text-color-light custom-btn-effect-1 custom-border-radius-1 d-inline-flex align-items-center font-weight-semibold text-3-5 btn-px-5 btn-py-3 btn-my-3 appear-animation" data-hash data-hash-offset="0" data-hash-offset-lg="32" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="300" data-appear-animation-duration="1.7s">
+                  <?php echo esc_attr($titulo_boton_unete); ?>
                 </a>
             </div>
             </div>
