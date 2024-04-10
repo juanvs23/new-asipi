@@ -17,9 +17,11 @@ $get_day = tribe_get_start_date($event,true,'d');
                                     <span class="day font-weight-extra-bold"><?php echo $get_day;?></span>
                                     <span class="month text-4 textt-uppercase"><?php echo $get_month;?></span>
                                     </div>
+                                    
                                     <a href="<?php echo $event_link;?>">
                                     <img src="<?php echo $feature_image;?>" alt="<?php echo $event_title; ?>" class="img-fluid" style="aspect-ratio: 16/6;object-fit: cover" />
-                                    </a>
+                                        
+                                </a>
                                 </span>
                                 <span class="thumb-info-caption">
                                     <span class="thumb-info-caption-text">
