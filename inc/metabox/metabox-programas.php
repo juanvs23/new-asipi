@@ -1,24 +1,22 @@
 <?php
 
-
-function agregar_metabox_media() {
+function agregar_metabox_programas() {
     if ( get_page_template() == get_query_template('front-page') ) {
         add_meta_box(
-            'id_metabox_media', // ID único para el Metabox
-            'Patrocinadores', // Título que se mostrará en la interfaz
-            'mostrar_contenido_metabox_media', // Función que mostrará el contenido del Metabox
+            'id_metabox_programas', // ID único para el Metabox
+            'Programas', // Título que se mostrará en la interfaz
+            'mostrar_contenido_metabox_programas', // Función que mostrará el contenido del Metabox
             'page', // Tipo de contenido al que se aplicará (en este caso, entradas)
             'normal', // Contexto donde se mostrará (normal, avanzado, lateral)
             'high' // Prioridad en la que se mostrará (low, default, high)
             );
-
-        }
- 
     }
+  
+    }
+    
+add_action('add_meta_boxes', 'agregar_metabox_programas');
 
-add_action('add_meta_boxes', 'agregar_metabox_media');
-
-function mostrar_contenido_metabox_media($post) {
+function mostrar_contenido_metabox_programas($post) {
     // Recuperar el valor guardado, si existe
     $title_institucional = get_post_meta($post->ID, '_title_institucional', true);
     $shortcode_institucional = get_post_meta($post->ID, '_shortcode_institucional', true);
@@ -72,7 +70,7 @@ function mostrar_contenido_metabox_media($post) {
     
 }
 
-function guardar_informacion_metabox_media($post_id) {
+function guardar_informacion_metabox_programas($post_id) {
     // Verificar si es una solicitud automática y si el usuario actual tiene permisos
     if (defined('DOING_AUTOSAVE') && DOING_AUTOSAVE) return;
     if (!current_user_can('edit_post', $post_id)) return;
@@ -90,15 +88,15 @@ function guardar_informacion_metabox_media($post_id) {
 
 }
             
-add_action('save_post', 'guardar_informacion_metabox_media');
+add_action('save_post', 'guardar_informacion_metabox_programas');
 
 
 function mm_include_script() {
  
-    if (! did_action( 'wp_enqueue_media')) {
-        wp_enqueue_media();
+    if (! did_action( 'wp_enqueue_programas')) {
+        wp_enqueue_programas();
     }
   
-    wp_enqueue_script( 'mmscript', get_stylesheet_directory_uri(). '/assets/js/mmscript.js', array('jquery'), null, false );
+    wp_enqueue_script( 'mpscript', get_stylesheet_directory_uri(). '/assets/js/mpscript.js', array('jquery'), null, false );
 }
-add_action( 'admin_enqueue_scripts', 'mm_include_script' );
+add_action( 'admin_enqueue_scripts', 'mp_include_script' );
