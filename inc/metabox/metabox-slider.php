@@ -1,14 +1,17 @@
 <?php
 
 function agregar_metabox_slider_home() {
-    add_meta_box(
-    'id_metabox_slider_home', // ID único para el Metabox
-    'Slider Home', // Título que se mostrará en la interfaz
-    'mostrar_contenido_metabox_slider_home', // Función que mostrará el contenido del Metabox
-    'page', // Tipo de contenido al que se aplicará (en este caso, entradas)
-    'normal', // Contexto donde se mostrará (normal, avanzado, lateral)
-    'high' // Prioridad en la que se mostrará (low, default, high)
-    );
+    if ( get_page_template() == get_query_template('front-page') ) {
+        add_meta_box(
+            'id_metabox_slider_home', // ID único para el Metabox
+            'Slider Home', // Título que se mostrará en la interfaz
+            'mostrar_contenido_metabox_slider_home', // Función que mostrará el contenido del Metabox
+            'page', // Tipo de contenido al que se aplicará (en este caso, entradas)
+            'normal', // Contexto donde se mostrará (normal, avanzado, lateral)
+            'high' // Prioridad en la que se mostrará (low, default, high)
+            );
+    }
+  
     }
     
 add_action('add_meta_boxes', 'agregar_metabox_slider_home');
