@@ -41,9 +41,14 @@ get_header(); ?>
 				echo get_template_part( 'template-parts/page/front-page/unete');
 			}
 
+			//Noticias
+			echo get_template_part( 'template-parts/page/front-page/notices');
 
 			// Redes y News
 			echo get_template_part( 'template-parts/page/front-page/redes');
+
+			//Programas
+			echo get_template_part( 'template-parts/page/front-page/program-section');
 			
 			
 			//Patrocinadores Institucionales
