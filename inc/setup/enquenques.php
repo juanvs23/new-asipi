@@ -53,6 +53,7 @@ function newasipi_scripts() {
 
 
 
+
     wp_enqueue_script('plugins',NEWASIPI_URL.'/assets/libs/plugins/js/plugins.min.js',array('jquery'),NEWASIPI_VERSION,true);
 
     wp_enqueue_script('theme-js',NEWASIPI_URL.'/assets/js/theme.js',array('jquery','plugins'),NEWASIPI_VERSION,true);
@@ -65,6 +66,6 @@ function newasipi_scripts() {
 
     wp_enqueue_script('theme-init',NEWASIPI_URL.'/assets/js/theme.init.js',array('jquery','plugins','theme-js','demo-transportation-logistic-js','view-contact-js','newasipi-script'),NEWASIPI_VERSION,true);
 
-
+    
 }
 add_action('wp_enqueue_scripts','newasipi_scripts',99999999);

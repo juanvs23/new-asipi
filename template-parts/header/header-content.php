@@ -6,12 +6,12 @@
 <header id="header" class="header-effect-shrink" data-plugin-options="{'stickyEnabled': true, 'stickyEffect': 'shrink', 'stickyEnableOnBoxed': true, 'stickyEnableOnMobile': false, 'stickyChangeLogo': true, 'stickyStartAt': 120, 'stickyHeaderContainerHeight': 70}">
          <div class="header-body border-top-0">
            <div class="header-top">
+      
              <div class="container">
                <div class="py-2 header-row">
                  <div class="header-column justify-content-start">
                    <div class="header-row">
-					<?php echo get_template_part('template-parts/navigation/navigation-topbar');?>
-                     
+					            <?php echo get_template_part('template-parts/navigation/navigation-topbar');?>  
                    </div>
                  </div>
                  <div class="header-column justify-content-end">

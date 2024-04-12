@@ -2,9 +2,10 @@
 // Silent is golden
 get_header();
 
-echo do_shortcode('[asipi_breadcrumbs_shortcode]');
+//echo do_shortcode('[asipi_breadcrumbs_shortcode]');
 ?>
 
+<?php echo get_template_part('template-parts/header/header-br-content'); ?>
   <div role="main" class="main">
         <?php // add_revslider('carousel-home-espanol');  ?>
 			<?php
