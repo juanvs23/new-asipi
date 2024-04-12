@@ -3,6 +3,7 @@
 get_header();
 ?>
   <div role="main" class="main">
+  <?php echo get_template_part('template-parts/header/header-br-content'); ?>
         <?php // add_revslider('carousel-home-espanol');  ?>
 			<?php
 			while ( have_posts() ) :
@@ -14,7 +15,8 @@ get_header();
 					</div><!-- .entry-page-image -->
 				<?php endif; ?>
 
-				<?php get_template_part( 'content', 'page' ); ?>
+				<?php //get_template_part( 'content', 'page' ); ?>
+				<?php echo get_template_part('template-parts/page/page-content'); ?>
 
 			<?php endwhile; // End of the loop. ?>
 
