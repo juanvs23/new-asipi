@@ -15,7 +15,7 @@
 get_header(); ?>
 <?php
 //remover este echo y cambiarlo por el breakcumb 
-echo '<h1>'. get_the_title().'</h1>'; 
+echo do_shortcode('[asipi_breadcrumbs_shortcode]'); 
 ?>
 
 
