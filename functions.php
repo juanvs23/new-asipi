@@ -22,8 +22,6 @@ if (!defined('NEWASIPI_URL')) {
 if (!defined('NEWASIPI_VERSION')) {
     define('NEWASIPI_VERSION', '1.0.0');
 }
-
-
 if (file_exists(NEWASIPI_PATH.'/inc/includes.php')) { 
     require NEWASIPI_PATH.'/inc/includes.php';
  }
