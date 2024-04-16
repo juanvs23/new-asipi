@@ -10,8 +10,17 @@
                         <div class="owl-carousel nav-outside nav-arrows-1 custom-carousel-box-shadow-1 appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="750" data-plugin-options="{'responsive': {'0': {'items': 1}, '479': {'items': 1}, '768': {'items': 1}, '979': {'items': 2}, '1199': {'items':3}}, 'autoplay': false, 'autoplayTimeout': 5000, 'autoplayHoverPause': true, 'dots': false, 'nav': true, 'loop': false, 'margin': 20, 'stagePadding': '75'}">
                             <?php 
                             $query = new WP_Query( array(
-                                'post_type' => 'post',
+                                'post_type' => 'publicacion',
                                 'posts_per_page' => 10,
+                                'order' => 'DESC',
+                                'orderby' => 'date',
+                                'tax_query' => array(
+                                    array(
+                                        'taxonomy' => 'category',
+                                        'field' => 'id',
+                                        'terms' => '1429'                                        
+                                    )
+                                )
                             ));
                             if ( $query->have_posts() ) {
                                 while ( $query->have_posts() ) {
