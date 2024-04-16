@@ -24,7 +24,7 @@
 	--primary-rgba-80: rgba(9, 159, 220, 0.8);
 	--primary-rgba-90: rgba(9, 159, 220, 0.9);
 	--secondary: #068439;
-	--secondary-100: #045ee9;
+	--secondary-100: #00953A;
 	--secondary-200: #0459dc;
 	--secondary-300: #0354d0;
 	--secondary--100: #2479fb;
@@ -121,8 +121,8 @@
 /* Grey Colors */
 :root {
 	--grey: #969696;
-	--grey-100: #f4f4f4;
-	--grey-200: #eaeaea;
+	--grey-100: #eaeaea;
+	--grey-200: #f4f4f4;
 	--grey-300: #e5e5e5;
 	--grey-400: #e0e0e0;
 	--grey-500: #dbdbdb;

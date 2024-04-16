@@ -70,12 +70,33 @@ function fbreadcrumbs() {
       echo $currentBefore . get_the_time('Y') . $currentAfter;
   
     } elseif ( is_single() && !is_attachment() ) {
-      $cat = get_the_category(); $cat = $cat[0];
-      var_dump(get_category_parents($cat, TRUE, ' ' . $delimiter . ' '));
-      echo get_category_parents($cat, TRUE, ' ' . $delimiter . ' ');
-      echo $currentBefore;
-      the_title();
-      echo $currentAfter;
+      $cat = get_the_category();
+     
+      if (!empty($cat)){
+        $cat = $cat[0];
+        echo get_category_parents($cat, TRUE, ' ' . $delimiter . ' ');
+        echo $currentBefore;
+        the_title();
+        echo $currentAfter;
+      }else{
+        $enlace = post_permalink($post->ID);       
+       
+        $menuLocations = get_nav_menu_locations(); // Get our nav locations (set in our theme, usually functions.php)
+        // This returns an array of menu locations ([LOCATION_NAME] = MENU_ID);
+        $menuID = $menuLocations['primary']; // Get the *primary* menu ID
+        $primaryNav = wp_get_nav_menu_items($menuID); 
+        $custom_post_type = get_post_type();
+
+        foreach ( $primaryNav as $navItem ) {
+          if (($navItem->object== $custom_post_type ) &&  $navItem->url==$enlace){
+            echo '<li> '.$navItem->type_label.' </li>';
+          }
+      }
+        echo $currentBefore;
+        the_title();
+        echo $currentAfter;
+
+      }
   
     } elseif ( is_attachment() ) {
       $parent = get_post($post->post_parent);
