@@ -9,7 +9,7 @@
                     <div class="col">
                         <div class="owl-carousel nav-outside nav-arrows-1 custom-carousel-box-shadow-1 appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="750" data-plugin-options="{'responsive': {'0': {'items': 1}, '479': {'items': 1}, '768': {'items': 1}, '979': {'items': 2}, '1199': {'items':3}}, 'autoplay': false, 'autoplayTimeout': 5000, 'autoplayHoverPause': true, 'dots': false, 'nav': true, 'loop': false, 'margin': 20, 'stagePadding': '75'}">
                             <?php 
-                            $query = new WP_Query( array(
+                            /*$query = new WP_Query( array(
                                 'post_type' => 'publicacion',
                                 'posts_per_page' => 10,
                                 'order' => 'DESC',
@@ -29,7 +29,25 @@
                                     set_query_var( 'post', $query->post );
                                     get_template_part( 'template-parts/page/front-page/notice-card' );
                                 }
-                            }
+                            }*/
+                            global $wpdb, $wp_query, $post;
+                            $sub_prefix = 13;
+                            $term_index = 36;
+                                $results = $wpdb->get_results( "SELECT wp.*, wpm2.meta_value FROM pwisa_{$sub_prefix}_posts wp
+                                INNER JOIN pwisa_{$sub_prefix}_postmeta wpm
+                                ON (wp.ID = wpm.post_id AND wpm.meta_key = '_thumbnail_id')
+                                INNER JOIN pwisa_{$sub_prefix}_postmeta wpm2
+                                ON (wpm.meta_value = wpm2.post_id AND wpm2.meta_key = '_wp_attached_file')
+                                where wp.post_type='wpdmpro' and wp.post_status='publish' 
+                                and wp.id in (select object_id from pwisa_{$sub_prefix}_term_relationships where term_taxonomy_id = $term_index)
+                                order by wp.post_date DESC LIMIT 0, 10", OBJECT );
+                           //  var_dump($result);
+                                if (count($results) > 0):
+                                    	foreach ($results as $result) {  
+                                    	   set_query_var( 'post', ['post'=>$result, 'sub_prefix'=> $sub_prefix] );
+                                    get_template_part( 'template-parts/page/front-page/notice-card' );
+                                    	}
+                                endif;
                             wp_reset_postdata();
                             ?>
                            
