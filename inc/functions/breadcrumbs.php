@@ -45,7 +45,7 @@ function fbreadcrumbs() {
     global $post;
     $home = get_bloginfo('url');
     echo '<li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="' . $home . '">' . $name . '</a></li> ' . $delimiter . ' ';
-  
+
     if ( is_category() ) {
       global $wp_query;
       $cat_obj = $wp_query->get_queried_object();
@@ -86,12 +86,14 @@ function fbreadcrumbs() {
         $menuID = $menuLocations['primary']; // Get the *primary* menu ID
         $primaryNav = wp_get_nav_menu_items($menuID); 
         $custom_post_type = get_post_type();
+        
+        
 
         foreach ( $primaryNav as $navItem ) {
           if (($navItem->object== $custom_post_type ) &&  $navItem->url==$enlace){
             echo '<li> '.$navItem->type_label.' </li>';
           }
-      }
+        }
         echo $currentBefore;
         the_title();
         echo $currentAfter;
@@ -108,9 +110,46 @@ function fbreadcrumbs() {
       echo $currentAfter;
   
     } elseif ( is_page() && !$post->post_parent ) {
-      echo $currentBefore;
-      the_title();
-      echo $currentAfter;
+        $enlace = post_permalink($post->ID);       
+       
+        $menuLocations = get_nav_menu_locations(); // Get our nav locations (set in our theme, usually functions.php)
+        // This returns an array of menu locations ([LOCATION_NAME] = MENU_ID);
+        $menuID = $menuLocations['primary']; // Get the *primary* menu ID
+        $primaryNav = wp_get_nav_menu_items($menuID); 
+        $primaryNav1 = wp_get_nav_menu_items($menuID); 
+        $primaryNav2 = wp_get_nav_menu_items($menuID); 
+        $custom_post_type = get_post_type();
+        //var_dump($primaryNav);
+
+        foreach ( $primaryNav as $navItem ) {
+            
+            if ($navItem->object== $custom_post_type  &&  $navItem->url==$enlace){
+                
+                foreach ( $primaryNav1 as $navItem1 ) {
+                     if ($navItem->menu_item_parent==$navItem1->object_id){
+                        $titulo= $navItem1->title;
+                        $parent_id=$navItem1->menu_item_parent;
+                     }
+                       
+                      
+                }
+                
+                foreach ( $primaryNav2 as $navItem2 ) {
+                    if ($parent_id==$navItem2->object_id){
+                         $titulo1= $navItem2->title; 
+                    }
+                }
+                
+                if (isset($titulo1)){
+                    echo '<li>'.$titulo1.'</li>';
+                }
+                echo '<li>'.$titulo.'</li>';
+            }
+        }
+        
+        echo $currentBefore;
+        the_title();
+        echo $currentAfter;
   
     } elseif ( is_page() && $post->post_parent ) {
       $parent_id  = $post->post_parent;

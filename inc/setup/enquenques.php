@@ -23,31 +23,31 @@ function newasipi_scripts() {
   
 
 
-    wp_enqueue_style('font','https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800%7CShadows+Into+Light&display=swap',array(),NEWASIPI_VERSION,'all');
+    wp_enqueue_style('googleFonts','https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800%7CShadows+Into+Light&display=swap',array(),NEWASIPI_VERSION,'all');
 
-    wp_enqueue_style('bootstrap',NEWASIPI_URL.'/assets/libs/bootstrap/css/bootstrap.min.css',array('font'),NEWASIPI_VERSION,'all');
+    wp_enqueue_style('bootstrap',NEWASIPI_URL.'/assets/libs/bootstrap/css/bootstrap.min.css',array('googleFonts'),NEWASIPI_VERSION,'all');
 
-    wp_enqueue_style('all-min',NEWASIPI_URL.'/assets/libs/fontawesome-free/css/all.min.css',array('font','bootstrap'),NEWASIPI_VERSION,'all');
+    wp_enqueue_style('all-min',NEWASIPI_URL.'/assets/libs/fontawesome-free/css/all.min.css',array('googleFonts','bootstrap'),NEWASIPI_VERSION,'all');
   
-    wp_enqueue_style('animate',NEWASIPI_URL.'/assets/libs/animate/animate.compat.css',array('font','bootstrap','all-min'),NEWASIPI_VERSION,'all');
+    wp_enqueue_style('animate',NEWASIPI_URL.'/assets/libs/animate/animate.compat.css',array('googleFonts','bootstrap','all-min'),NEWASIPI_VERSION,'all');
 
-    wp_enqueue_style('simple-line-icons',NEWASIPI_URL.'/assets/libs/simple-line-icons/css/simple-line-icons.min.css',array('font','bootstrap','all-min','animate'),NEWASIPI_VERSION,'all');
+    wp_enqueue_style('simple-line-icons',NEWASIPI_URL.'/assets/libs/simple-line-icons/css/simple-line-icons.min.css',array('googleFonts','bootstrap','all-min','animate'),NEWASIPI_VERSION,'all');
     
-    wp_enqueue_style('owl-carousel',NEWASIPI_URL.'/assets/libs/owl.carousel/assets/owl.carousel.min.css',array('font','bootstrap','all-min','animate','simple-line-icons'),NEWASIPI_VERSION,'all');
+    wp_enqueue_style('owl-carousel',NEWASIPI_URL.'/assets/libs/owl.carousel/assets/owl.carousel.min.css',array('googleFonts','bootstrap','all-min','animate','simple-line-icons'),NEWASIPI_VERSION,'all');
 
-    wp_enqueue_style('owl-carousel-theme',NEWASIPI_URL.'/assets/libs/owl.carousel/assets/owl.theme.default.min.css',array('font','bootstrap','all-min','animate','simple-line-icons','owl-carousel'),NEWASIPI_VERSION,'all');
+    wp_enqueue_style('owl-carousel-theme',NEWASIPI_URL.'/assets/libs/owl.carousel/assets/owl.theme.default.min.css',array('googleFonts','bootstrap','all-min','animate','simple-line-icons','owl-carousel'),NEWASIPI_VERSION,'all');
 
-    wp_enqueue_style('magnific-popup',NEWASIPI_URL.'/assets/libs/magnific-popup/magnific-popup.min.css',array('font','bootstrap','all-min','animate','simple-line-icons','owl-carousel','owl-carousel-theme'),NEWASIPI_VERSION,'all');
+    wp_enqueue_style('magnific-popup',NEWASIPI_URL.'/assets/libs/magnific-popup/magnific-popup.min.css',array('googleFonts','bootstrap','all-min','animate','simple-line-icons','owl-carousel','owl-carousel-theme'),NEWASIPI_VERSION,'all');
 
-    wp_enqueue_style('theme',NEWASIPI_URL.'/assets/css/theme.css',array('font','bootstrap','all-min','animate','simple-line-icons','owl-carousel','owl-carousel-theme','magnific-popup'),NEWASIPI_VERSION,'all');
+    wp_enqueue_style('theme',NEWASIPI_URL.'/assets/css/theme.css',array('googleFonts','bootstrap','all-min','animate','simple-line-icons','owl-carousel','owl-carousel-theme','magnific-popup'),NEWASIPI_VERSION,'all');
 
-    wp_enqueue_style('theme-elements',NEWASIPI_URL.'/assets/css/theme-elements.css',array('font','bootstrap','all-min','animate','simple-line-icons','owl-carousel','owl-carousel-theme','magnific-popup','theme'),NEWASIPI_VERSION,'all');
+    wp_enqueue_style('theme-elements',NEWASIPI_URL.'/assets/css/theme-elements.css',array('googleFonts','bootstrap','all-min','animate','simple-line-icons','owl-carousel','owl-carousel-theme','magnific-popup','theme'),NEWASIPI_VERSION,'all');
 
-    wp_enqueue_style('theme-blog',NEWASIPI_URL.'/assets/css/theme-blog.css',array('font','bootstrap','all-min','animate','simple-line-icons','owl-carousel','owl-carousel-theme','magnific-popup','theme','theme-elements'),NEWASIPI_VERSION,'all');
+    wp_enqueue_style('theme-blog',NEWASIPI_URL.'/assets/css/theme-blog.css',array('googleFonts','bootstrap','all-min','animate','simple-line-icons','owl-carousel','owl-carousel-theme','magnific-popup','theme','theme-elements'),NEWASIPI_VERSION,'all');
 
-    wp_enqueue_style('demo-transportation-logistic',NEWASIPI_URL.'/assets/css/demos/demo-transportation-logistic.css',array('font','bootstrap','all-min','animate','simple-line-icons','owl-carousel','owl-carousel-theme','magnific-popup','theme','theme-elements','theme-blog'),NEWASIPI_VERSION,'all');
+    wp_enqueue_style('demo-transportation-logistic',NEWASIPI_URL.'/assets/css/demos/demo-transportation-logistic.css',array('googleFonts','bootstrap','all-min','animate','simple-line-icons','owl-carousel','owl-carousel-theme','magnific-popup','theme','theme-elements','theme-blog'),NEWASIPI_VERSION,'all');
     
-    wp_enqueue_style('skin-transportation-logistic',NEWASIPI_URL.'/assets/css/skins/skin-transportation-logistic.css',array('font','bootstrap','all-min','animate','simple-line-icons','owl-carousel','owl-carousel-theme','magnific-popup','theme','theme-elements','theme-blog','demo-transportation-logistic'),NEWASIPI_VERSION,'all');
+    wp_enqueue_style('skin-transportation-logistic',NEWASIPI_URL.'/assets/css/skins/skin-transportation-logistic.css',array('googleFonts','bootstrap','all-min','animate','simple-line-icons','owl-carousel','owl-carousel-theme','magnific-popup','theme','theme-elements','theme-blog','demo-transportation-logistic'),NEWASIPI_VERSION,'all');
     
     wp_enqueue_style('newasipi-style',NEWASIPI_URL.'/assets/css/custom.css',array('skin-transportation-logistic'),NEWASIPI_VERSION,'all');
 
