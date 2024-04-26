@@ -143,7 +143,10 @@ function fbreadcrumbs() {
                 if (isset($titulo1)){
                     echo '<li>'.$titulo1.'</li>';
                 }
-                echo '<li>'.$titulo.'</li>';
+                
+                if (isset($titulo)){
+                    echo '<li>'.$titulo.'</li>';
+                }
             }
         }
         
